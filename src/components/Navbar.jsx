@@ -59,7 +59,7 @@ export default function Navbar() {
                 className={`nav-link ${
                   activeSection === "home" ? "active text-primary fw-bold" : ""
                 }`}
-                href="#"
+                href="#home"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("home");
@@ -75,7 +75,7 @@ export default function Navbar() {
                     ? "active text-primary fw-bold"
                     : ""
                 }`}
-                href="#"
+                href="#features"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("features");
@@ -87,14 +87,14 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 className={`nav-link ${
-                  activeSection === "features"
+                  activeSection === "services"
                     ? "active text-primary fw-bold"
                     : ""
                 }`}
-                href="#"
+                href="#services"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("Services");
+                  scrollToSection("services");
                 }}
               >
                 Services
@@ -103,14 +103,12 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 className={`nav-link ${
-                  activeSection === "features"
-                    ? "active text-primary fw-bold"
-                    : ""
+                  activeSection === "about" ? "active text-primary fw-bold" : ""
                 }`}
-                href="#"
+                href="#about"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("About");
+                  scrollToSection("about");
                 }}
               >
                 About
@@ -119,14 +117,12 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 className={`nav-link ${
-                  activeSection === "features"
-                    ? "active text-primary fw-bold"
-                    : ""
+                  activeSection === "contact" ? "active text-primary fw-bold" : ""
                 }`}
-                href="#"
+                href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("Contact");
+                  scrollToSection("contact");
                 }}
               >
                 Contact
