@@ -2,20 +2,26 @@ import serv1image from "../images/serv1.png";
 import serv2image from "../images/serv2.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { useEffect } from "react";
+import Localization from "../language/localization";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper/modules";
 
-export default function Services() {
+export default function Services({ local }) {
+  useEffect(() => {
+    Localization.setLanguage(local);
+  }, [local]);
   return (
     <section className="py-5 bg-light" id="services">
       <div className="container">
-        <h2 className="text-center fw-bold mb-4">Our Services</h2>
+        <h2 className="text-center fw-bold mb-4">
+          {Localization.service.title}
+        </h2>
         <p className="text-center mb-5 text-muted">
-          Empowering businesses with smart financial solutions tailored for the
-          modern world.
+          {Localization.service.desc}
         </p>
 
         <Swiper
@@ -27,24 +33,23 @@ export default function Services() {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          <SwiperSlide>
-            {" "}
-            <div className="card h-100 shadow-sm border-0">
-              <img
-                src={serv1image}
-                className="card-img-top"
-                alt="Smart Accounting"
-              />
-              <div className="card-body">
-                <h5 className="card-title fw-semibold">Smart Accounting</h5>
-                <p className="card-text text-muted">
-                  Automate your finances with accurate, real-time bookkeeping
-                  tools.
-                </p>
+          {Localization.service.list.map((serv, index) => (
+            <SwiperSlide>
+              {" "}
+              <div className="card h-100 shadow-sm border-0">
+                <img
+                  src={serv1image}
+                  className="card-img-top"
+                  alt={serv.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title fw-semibold">{serv.title}</h5>
+                  <p className="card-text text-muted">{serv.desc}</p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide>
             {" "}
             <div className="card h-100 shadow-sm border-0">
               <img
@@ -94,7 +99,7 @@ export default function Services() {
                 </p>
               </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
 
         {/* <div className="carousel">

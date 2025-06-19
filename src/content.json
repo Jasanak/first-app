@@ -1,0 +1,111 @@
+{
+  "alertBanner": {
+    "text": "Partner with us to transform your financial operations through powerful IT solutions."
+  },
+  "navbar": {
+    "home": "Home",
+    "features": "Features",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "lightMode": "☀️ Light",
+    "darkMode": "🌙 Dark",
+    "brand": "Finbiz Nepal"
+  },
+  "hero": {
+    "ServicesTitle": "Simplifying Finances.<br/>Empowering Business.",
+    "description": "AIMS - Accounting and Inventory Management System. The complete solution for modern businesses to manage finances, track inventory, and generate comprehensive reports with ease.",
+    "getInTouch": "Get in Touch",
+    "watchDemo": "Watch Demo"
+  },
+  "about": {
+    "title": "Who We Are",
+    "paragraphs": [
+      "FinBiz Nepal is a small team of developers, designers, and thinkers passionate about simplifying finance through tech. We build practical financial tools that help businesses work smarter, not harder.",
+      "We're just starting out but we're building tools we believe every business in Nepal should have access to. At AIMS, we focus on one thing: making finance and inventory management simple.",
+      "We just deliver clear, useful software that works. No noise. No clutter. Just tools that help you run things better, every single day."
+    ],
+    "cta": "Let's Build Together",
+    "video": {
+      "url": "https://www.youtube.com/embed/il_t1WVLNxk",
+      "caption": "🚀Built to work. Designed to last."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Empowering businesses with smart financial solutions tailored for the modern world.",
+    "list": [
+      {
+        "title": "Smart Accounting",
+        "text": "Automate your finances with accurate, real-time bookkeeping tools."
+      },
+      {
+        "title": "Inventory Management",
+        "text": "Track stock levels, orders, and deliveries with ease and clarity."
+      },
+      {
+        "title": "Tax Filing Support",
+        "text": "Get expert help with VAT, PAN, and other compliance essentials."
+      },
+      {
+        "title": "Business Insights",
+        "text": "Make informed decisions with intelligent reporting and analytics."
+      }
+    ]
+  },
+  "testimonial": {
+    "title": "What Our Clients Say",
+    "quotes": [
+      {
+        "name": "John Doe",
+        "title": "CEO",
+        "company": "TechSoft Pvt. Ltd.",
+        "content": "FinBiz Nepal helped us streamline our accounting like never before."
+      },
+      {
+        "name": "Anita Sharma",
+        "title": "Manager",
+        "company": "BizGroup",
+        "content": "Their tools are intuitive and the support is great!"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "info": {
+      "call": {
+        "title": "CALL US",
+        "numbers": ["+977-01-1234567", "+977-01-9876543"]
+      },
+      "location": {
+        "title": "LOCATION",
+        "text": "Kathmandu, Nepal"
+      },
+      "hours": {
+        "title": "BUSINESS HOURS",
+        "text": ["Mon-Fri: 9am-6pm", "Sat-Sun: Closed"]
+      }
+    },
+    "form": {
+      "title": "CONTACT US",
+      "success": {
+        "message": "✅ Message sent successfully!",
+        "note": "We'll contact you within 24 hours."
+      },
+      "placeholders": {
+        "name": "Enter your Name",
+        "email": "Enter a valid email address",
+        "message": "Your Message"
+      },
+      "buttons": {
+        "submit": "SUBMIT",
+        "sending": "Sending..."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 AIMS. All rights reserved.",
+    "tagline": "Your trusted partner for accounting and inventory management solutions."
+  }
+}

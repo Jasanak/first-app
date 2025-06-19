@@ -117,7 +117,9 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 className={`nav-link ${
-                  activeSection === "contact" ? "active text-primary fw-bold" : ""
+                  activeSection === "contact"
+                    ? "active text-primary fw-bold"
+                    : ""
                 }`}
                 href="#contact"
                 onClick={(e) => {

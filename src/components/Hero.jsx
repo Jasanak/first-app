@@ -1,27 +1,32 @@
-import { Trans } from "react-i18next";
 import myImage from "../images/dash.png";
+import { useEffect, useState } from "react";
+import Localization from "../language/localization";
 
-export default function Hero() {
+export default function Hero({ local }) {
   // const { t, i18n } = useTranslation();
+  useEffect(() => {
+    Localization.setLanguage(local);
+  }, [local]);
   return (
     <div>
       <section className="hero d-flex">
         <div className="container">
           <h1>
             {/* {t("ServicesTitle")} */}
-            <Trans i18nKey="ServicesTitle" components={{ br: <br /> }} />
+            {/* <Trans i18nKey="ServicesTitle" components={{ br: <br /> }} /> */}
           </h1>
           <br />
           <h4>
-            AIMS - Accounting and Inventory Management System. The complete
+            {Localization.mainTitle}
+            {/* AIMS - Accounting and Inventory Management System. The complete
             solution for modern businesses to manage finances, track inventory,
-            and generate comprehensive reports with ease.
+            and generate comprehensive reports with ease. */}
           </h4>
           <a href="#contact" className="btn btn-primary mt-3 me-2">
-            Get in Touch
+            {Localization.getIntoTouchBtn}
           </a>
           <a href="#demo" className="btn btn-success mt-3">
-            Watch Demo
+            {Localization.watchDemoBtn}
           </a>
         </div>
         <div className="dash">

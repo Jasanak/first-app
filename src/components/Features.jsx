@@ -1,12 +1,19 @@
-export default function Features() {
+import { useEffect } from "react";
+import Localization from "../language/localization";
+export default function Features({ local }) {
+  useEffect(() => {
+    Localization.setLanguage(local);
+  }, [local]);
   return (
     <div id="features">
       <section className="features">
         <div className="container my-5">
-          <h2 className="text-center mb-4 fw-bold">AIMS Features</h2>
+          <h2 className="text-center mb-4 fw-bold">
+            {Localization.feature.title}
+          </h2>
           <div className="row text-center">
             {/* First feature is already correct */}
-            <div className="col-md-4 mb-4">
+            {/* <div className="col-md-4 mb-4">
               <div className="p-4 bg-light rounded shadow-sm hover-shadow">
                 <i className="bi bi-shield-lock fs-1 text-primary"></i>
                 <h5 className="mt-3 fw-semibold">Secure Systems</h5>
@@ -18,23 +25,26 @@ export default function Features() {
                   <i className="bi bi-arrow-right-circle-fill fs-4"></i>
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Additional features */}
-            <div className="col-md-4 mb-4">
-              <div className="p-4 bg-light rounded shadow-sm hover-shadow">
-                <i className="bi bi-bar-chart-line fs-1 text-success"></i>
-                <h5 className="mt-3 fw-semibold">Analytics</h5>
-                <p>Live financial insights to guide your decisions.</p>
-                <a
-                  href="#secure-systems"
-                  className="position-absolute bottom-0 end-0 m-3 text-decoration-none text-primary"
-                >
-                  <i className="bi bi-arrow-right-circle-fill fs-4"></i>
-                </a>
-              </div>
-            </div>
 
+            {Localization.feature.list.map((feat, index) => (
+              <div className="col-md-4 mb-4" key={index}>
+                <div className="p-4 bg-light rounded shadow-sm hover-shadow">
+                  <i className={feat.icon}></i>
+                  <h5 className="mt-3 fw-semibold">{feat.title}</h5>
+                  <p>{feat.desc}</p>
+                  <a
+                    href="#secure-systems"
+                    className="position-absolute bottom-0 end-0 m-3 text-decoration-none text-primary"
+                  >
+                    <i className="bi bi-arrow-right-circle-fill fs-4"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+            {/* 
             <div className="col-md-4 mb-4">
               <div className="p-4 bg-light rounded shadow-sm hover-shadow">
                 <i className="bi bi-cloud-check fs-1 text-info"></i>
@@ -89,7 +99,7 @@ export default function Features() {
                   <i className="bi bi-arrow-right-circle-fill fs-4"></i>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
