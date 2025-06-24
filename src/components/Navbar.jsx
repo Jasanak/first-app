@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 

@@ -8,9 +8,7 @@ import Hero from "./components/Hero";
 import Features from "./components/Features";
 import Services from "./components/Services";
 import Testimonial from "./components/Testimonial";
-// import Footer from "./components/Footer";
 import emailjs from "emailjs-com";
-
 import Localization from "./language/localization";
 
 function App() {
@@ -42,13 +40,8 @@ function App() {
     Localization.setLanguage(curLang);
   }, [curLang]);
 
-  // function change_lang(newLang) {
-  //   Localization.setLanguage(newLang);
-  // }
-
   return (
     <div className="App">
-      {/* Alert Banner */}
       <div
         className="alert alert-info text-center mb-0 py-2 border"
         style={{ marginTop: "75px", scrollMarginTop: "75px" }}
@@ -63,7 +56,6 @@ function App() {
       <Features local={curLang} />
       <Services local={curLang} />
 
-      {/* About Section */}
       <section className="about-section py-5" id="about">
         <div className="container">
           <div className="row align-items-center g-5">
@@ -88,31 +80,57 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="footer-section py-5 bg-dark text-light">
         <div className="container">
           <div className="row">
             <div className="col-md-6 mb-4 mb-md-0">
-              <button onClick={() => setCurLang("en")}>Nep</button>
-              <button onClick={() => setCurLang("np")}>Eng</button>
+              {/* Fixed Language Toggle Buttons */}
+              <div className="mb-4">
+                <button
+                  onClick={() => setCurLang("en")}
+                  className={`btn btn-sm me-2 ${
+                    curLang === "en" ? "btn-primary" : "btn-outline-primary"
+                  }`}
+                >
+                  नेपाली
+                </button>
+                <button
+                  onClick={() => setCurLang("np")}
+                  className={`btn btn-sm ${
+                    curLang === "np" ? "btn-primary" : "btn-outline-primary"
+                  }`}
+                >
+                  English
+                </button>
+              </div>
+              
+
               <div style={{ marginBottom: "25px" }}>
-                <h5 style={{ color: "#3498db" }}>CALL US</h5>
+                <h5 style={{ color: "#3498db" }}>
+                  {Localization.contactInfo?.callUs || "CALL US"}
+                </h5>
                 <p>
-                  +977-01-1234567
+                  {Localization.contactInfo?.phones?.[0] || "+977-01-1234567"}
                   <br />
-                  +977-01-9876543
+                  {Localization.contactInfo?.phones?.[1] || "+977-01-9876543"}
                 </p>
               </div>
               <div style={{ marginBottom: "25px" }}>
-                <h5 style={{ color: "#3498db" }}>LOCATION</h5>
-                <p>Kathmandu, Nepal</p>
+                <h5 style={{ color: "#3498db" }}>
+                  {Localization.contactInfo?.location || "LOCATION"}
+                </h5>
+                <p>{Localization.contactInfo?.address || "Kathmandu, Nepal"}</p>
               </div>
               <div>
-                <h5 style={{ color: "#3498db" }}>BUSINESS HOURS</h5>
+                <h5 style={{ color: "#3498db" }}>
+                  {Localization.contactInfo?.businessHours || "BUSINESS HOURS"}
+                </h5>
                 <p>
-                  Mon-Fri: 9am-6pm
+                  {Localization.contactInfo?.hours?.weekdays ||
+                    "Mon-Fri: 9am-6pm"}
                   <br />
-                  Sat-Sun: Closed
+                  {Localization.contactInfo?.hours?.weekend ||
+                    "Sat-Sun: Closed"}
                 </p>
               </div>
             </div>
@@ -143,7 +161,10 @@ function App() {
                 <input
                   type="text"
                   name="from_name"
-                  placeholder="Enter your Name"
+                  placeholder={
+                    Localization.contactInfo?.formLabels?.name ||
+                    "Enter your Name"
+                  }
                   className="form-control"
                   required
                   style={{ padding: "12px 15px" }}
@@ -151,14 +172,20 @@ function App() {
                 <input
                   type="email"
                   name="from_email"
-                  placeholder="Enter a valid email address"
+                  placeholder={
+                    Localization.contactInfo?.formLabels?.email ||
+                    "Enter a valid email address"
+                  }
                   className="form-control"
                   required
                   style={{ padding: "12px 15px" }}
                 />
                 <textarea
                   name="message"
-                  placeholder="Your Message"
+                  placeholder={
+                    Localization.contactInfo?.formLabels?.message ||
+                    "Your Message"
+                  }
                   className="form-control"
                   rows="5"
                   required
@@ -175,7 +202,9 @@ function App() {
                     width: isLoading ? "120px" : "auto",
                   }}
                 >
-                  {isLoading ? "Sending..." : "SUBMIT"}
+                  {isLoading
+                    ? "Sending..."
+                    : Localization.contactInfo?.submit || "SUBMIT"}
                 </button>
               </form>
             </div>
@@ -185,10 +214,13 @@ function App() {
           className="text-center py-3"
           style={{ backgroundColor: "#1a252f" }}
         >
-          <p className="mb-0">© 2025 AIMS. All rights reserved.</p>
           <p className="mb-0">
-            Your trusted partner for accounting and inventory management
-            solutions.
+            {Localization.contactInfo?.footer?.copyright ||
+              "© 2025 AIMS. All rights reserved."}
+          </p>
+          <p className="mb-0">
+            {Localization.contactInfo?.footer?.tagline ||
+              "Your trusted partner for accounting and inventory management solutions."}
           </p>
         </div>
       </section>
